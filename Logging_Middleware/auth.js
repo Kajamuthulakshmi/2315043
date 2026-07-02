@@ -6,7 +6,6 @@ async function getAccessToken() {
         if (accessToken) {
             return accessToken;
         }
-
         const response = await axios.post(
               "http://4.224.186.213/evaluation-service/auth",
             {
@@ -16,7 +15,7 @@ async function getAccessToken() {
                 "accessCode": "ERzUyx",
                 "clientID": "c496ce45-89ec-43dd-a319-55e41b34f599",
                 "clientSecret": "DAheZcJWMtXpSSjc"
-}
+          }
         );
 
         accessToken = response.data.access_token;
@@ -28,5 +27,4 @@ async function getAccessToken() {
         console.log(error.response?.data || error.message);
     }
 }
-
 module.exports = getAccessToken;       
