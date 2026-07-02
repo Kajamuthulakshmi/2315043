@@ -1,13 +1,10 @@
 const axios = require("axios");
 const getAccessToken = require("./auth");
 
-// Reusable Log function
 async function Log(stack, level, packageName, message) {
     try {
-        // Get Bearer Token
         const token = await getAccessToken();
 
-        // Send log to Affordmed server
         const response = await axios.post(
             "http://4.224.186.213/evaluation-service/logs",
             {
